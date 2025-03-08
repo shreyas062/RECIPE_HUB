@@ -13,6 +13,7 @@ connectDB();
 const app = express();
 
 // Middleware to parse JSON data
+//json data dummy
 app.use(express.json());  
 app.use(express.json()); // ✅ Parses JSON request body
 app.use(express.urlencoded({ extended: true }));
