@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: "https://recipe-hub-backend-e5yl.onrender.com/api",
 });
 
 // Automatically attach token
@@ -30,7 +30,7 @@ API.interceptors.response.use(
         }
 
         // Request a new token
-        const res = await axios.post("http://localhost:5000/api/auth/refresh", { token: refreshToken });
+        const res = await axios.post("https://recipe-hub-backend-e5yl.onrender.com/api/auth/refresh", { token: refreshToken });
         localStorage.setItem("token", res.data.token);
 
         // Retry the original request with the new token

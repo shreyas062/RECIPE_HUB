@@ -21,7 +21,7 @@ const Dashboard = () => {
     try {
       const token = localStorage.getItem("token"); // Get auth token
   
-      const response = await fetch("http://localhost:5000/api/recipes/user/recipes", {
+      const response = await fetch("https://recipe-hub-backend-e5yl.onrender.com/api/recipes/user/recipes", {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`, // Send token for authentication
@@ -49,7 +49,7 @@ const Dashboard = () => {
     setDeletingId(id);
 
     try {
-      const response = await fetch(`http://localhost:5000/api/recipes/${id}`, {
+      const response = await fetch(`https://recipe-hub-backend-e5yl.onrender.com/api/recipes/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
